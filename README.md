@@ -1,37 +1,22 @@
-# SmartTrack: AI-Based International Travel Monitoring System for CSUCC OIGE
+# Khen Project
 
 ## Summary
-SmartTrack helps the CSUCC Office of the International and Global Engagement (OIGE) monitor international travel records. The first features of this starter project are a Home screen and a Login placeholder with a working navigation baseline.
+A Flutter Web application for [describe your community problem in 1–2 sentences].
 
-## Current stack
-- Implemented now: Flutter Web / Dart (client-side UI, widgets, navigation, forms).
-- Planned only (not implemented in Activity 8): REST API backend (e.g., FastAPI) and PostgreSQL for persistent storage.
+## Current Stack
+- **Frontend:** Flutter Web / Dart
+- **Planned Backend:** REST API (instructor-approved)
+- **Planned Database:** PostgreSQL (IT 108)
 
-## Project structure
-```
-lib/
-├── main.dart          # Entry point
-├── app.dart           # MaterialApp, theme, routes
-├── screens/           # Home and Login pages
-├── widgets/           # Reusable AppButton and AppTextField
-├── services/          # Future REST API client (placeholder)
-├── models/            # Client-side data structures
-├── routes/            # Route names and navigation map
-└── constants/         # App-wide constants (no secrets)
-```
+## Prerequisites
+Before running the project, make sure you have:
+- Flutter SDK installed (`flutter --version` to check)
+- Google Chrome installed and detected by Flutter (`flutter devices`)
+- Git installed
 
-## Run locally
-Prerequisites: Flutter SDK with web support and Google Chrome installed.
-
-```
+## Run Locally
+```bash
+git clone https://github.com/khenlumindas-beep/khen_project.git
+cd khen_project
 flutter pub get
 flutter run -d chrome
-```
-
-Run the tests with:
-```
-flutter test
-```
-
-## First checkpoint
-Date: __________ | Commit: __________
