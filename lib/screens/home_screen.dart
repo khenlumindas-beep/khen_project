@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../routes/app_routes.dart';
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -225,7 +227,12 @@ class _Sidebar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(10),
-                      onTap: () {},
+                      onTap: index == 4
+                          ? () => Navigator.pushNamed(
+                                context,
+                                AppRoutes.report,
+                              )
+                          : () {},
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 14, vertical: 12),
@@ -702,18 +709,29 @@ class _QuickActionsCard extends StatelessWidget {
           const SizedBox(height: 8),
           _action(Icons.upload_file_outlined, 'Upload Document', accent),
           const SizedBox(height: 8),
-          _action(Icons.bar_chart, 'View Reports', accent),
+          _action(
+            Icons.bar_chart,
+            'File a Report',
+            accent,
+            onTap: () => Navigator.pushNamed(context, AppRoutes.report),
+          ),
         ],
       ),
     );
   }
 
-  Widget _action(IconData icon, String label, Color color) => Material(
+  Widget _action(
+    IconData icon,
+    String label,
+    Color color, {
+    VoidCallback? onTap,
+  }) =>
+      Material(
         color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(10),
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
-          onTap: () {},
+          onTap: onTap ?? () {},
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
             child: Row(
